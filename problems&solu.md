@@ -24,13 +24,13 @@ git rm "filename.txt" 这个命令执行后是暂存区和工作区同步删除�
 
 - 撤回从本地删除操作被add到暂存区的操作 git reset
 
-​	<img src="C:\Users\zjy\AppData\Roaming\Typora\typora-user-images\image-20230502170148512.png" alt="image-20230502170148512" style="zoom:67%;" /> <img src="C:\Users\zjy\AppData\Roaming\Typora\typora-user-images\image-20230502170342215.png" alt="image-20230502170342215" style="zoom:67%;" />
+​	<img src=".//images//image-20230502170148512.png" alt="image-20230502170148512" style="zoom:67%;" /> <img src=".//images//image-20230502170342215.png" alt="image-20230502170342215" style="zoom:67%;" />
 
 - 撤回本地删除操作 git checkout -- "filename.txt"
 
-<img src="C:\Users\zjy\AppData\Roaming\Typora\typora-user-images\image-20230502170515563.png" alt="image-20230502170515563" style="zoom:67%;" /> <img src="C:\Users\zjy\AppData\Roaming\Typora\typora-user-images\image-20230502170651229.png" alt="image-20230502170651229" style="zoom:67%;" />
+<img src=".//images//image-20230502170515563.png" alt="image-20230502170515563" style="zoom:67%;" /> <img src=".//images//image-20230502170651229.png" alt="image-20230502170651229" style="zoom:67%;" />
 
 或者直接工作区和暂存区同时回退到版本库中上一次commit的状态 git reset --hard HEAD
 
-<img src="C:\Users\zjy\AppData\Roaming\Typora\typora-user-images\image-20230502170820169.png" alt="image-20230502170820169" style="zoom:67%;" /> <img src="C:\Users\zjy\AppData\Roaming\Typora\typora-user-images\image-20230502170831107.png" alt="image-20230502170831107" style="zoom:67%;" />
+<img src=".//images//image-20230502170820169.png" alt="image-20230502170820169" style="zoom:67%;" /> <img src=".//images//image-20230502170831107.png" alt="image-20230502170831107" style="zoom:67%;" />
 
