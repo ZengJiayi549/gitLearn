@@ -70,39 +70,13 @@ git rm "filename.txt" 这个命令执行后是暂存区和工作区同步删除�
 
 [(92条消息) git 之 git log命令原来还能这么玩_Z_ One Dream的博客-CSDN博客](https://blog.csdn.net/weixin_42335036/article/details/122974672)
 
-#### git-merge简介
+#### git-merge时发生了什么
 
 [git merge 的三种情况 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/545635048)
 
-git-merge命令是用于从指定的commit(s)合并到当前分支的操作。
-
-> 注：这里的指定commit(s)是指从这些历史commit节点开始，一直到当前分开的时候。
-
-git-merge命令有以下两种用途：
-
-1. 用于git-pull中，来整合另一代码仓库中的变化（即：git pull = git fetch + git merge）
-2. 用于从一个分支到另一个分支的合并
-
-假设下面的历史节点存在，并且当前所在的分支为“master”：
-
-![img](https:////upload-images.jianshu.io/upload_images/1226129-bce91fe9c75175ad.png?imageMogr2/auto-orient/strip|imageView2/2/w/209/format/webp)
-
-
- 那么`git merge topic`命令将会把在master分支上二者共同的节点（E节点）之后分离的节点（即topic分支的A B C节点）重现在master分支上，直到topic分支当前的commit节点（C节点），并位于master分支的顶部。并且沿着master分支和topic分支创建一个记录合并结果的新节点，该节点带有用户描述合并变化的信息。
-
-
-
-> 即下图中的H节点，C节点和G节点都是H节点的父节点。
-
-![img](https:////upload-images.jianshu.io/upload_images/1226129-0fcb16bd7f842832.png?imageMogr2/auto-orient/strip|imageView2/2/w/236/format/webp)
-
-作者：Chuckiefan
-链接：https://www.jianshu.com/p/58a166f24c81
-来源：简书
+[详解git merge命令应用的三种情景_相关技巧_脚本之家 (jb51.net)](https://www.jb51.net/article/192812.htm)
 
 #### merge合并冲突到底什么时候会发生
-
-[git merge 的三种情况 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/545635048)
 
 [(19 封私信 / 8 条消息) Git到底什么情况下会产生合并冲突？ - 知乎 (zhihu.com)](https://www.zhihu.com/question/510309450/answer/2342052525?utm_id=0)
 
