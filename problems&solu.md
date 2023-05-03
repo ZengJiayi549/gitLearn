@@ -128,16 +128,33 @@ git branch -a查看本地分支和远程分支origin/master但这里的远程分
 
 ##### 其他注意事项：
 
-​	origin/master: ahead 2的意思是，距离上次把master 分支push上远程仓库，master已经有了两个新的提交节点，可以再次push了。**注意：不要手动在origin/master分支merge master，这是没有意义的。就算两个指针一致了，还是会显示ahead。只有push成功了才会重新同步，不显示ahead**
+​	一、origin/master: ahead 2的意思是，距离上次把master 分支push上远程仓库，master已经有了两个新的提交节点，可以再次push了。**注意：不要手动在origin/master分支merge master，这是没有意义的。就算两个指针一致了，还是会显示ahead。只有push成功了才会重新同步，不显示ahead**
 
-<img src=".//images//image-20230503155421974.png" alt="image-20230503155421974" style="zoom:67%;" /> --------git push后------ 》<img src=".//images//image-20230503155922173.png" alt="image-20230503155922173" style="zoom:67%;" />
+<img src=".//images//image-20230503155421974.png" alt="image-20230503155421974" style="zoom:67%;" /> 
 
-​	origin/master:behind 2的意思是，远程仓库分两次改动了某些文件，并且分别fetch了两次到本地的origin/master分支上，但是此时的origin/master分支的内容并没有和master分支的内容合并，还需要【git checkout master】切换到本地master分支，【git merge origin/master】将origin/master的内容合并到master分支；master指针后移一个commit
+git push后：
+
+<img src=".//images//image-20230503155922173.png" alt="image-20230503155922173" style="zoom:67%;" /> 
+
+​	二、origin/master:behind 2的意思是，远程仓库分两次改动了某些文件，并且分别fetch了两次到本地的origin/master分支上，但是此时的origin/master分支的内容并没有和master分支的内容合并，还需要【git checkout master】切换到本地master分支，【git merge origin/master】将origin/master的内容合并到master分支；master指针后移一个commit
 
 <img src=".//images//image-20230503161435810.png" alt="image-20230503161435810" style="zoom:67%;" /> 
 
----git checkout master, git merge origin/master后---》
+git checkout master, git merge origin/master后：
 
 <img src=".//images//image-20230503161535077.png" alt="image-20230503161535077" style="zoom:67%;" /> 
 
-​	如果在本地origin/master与本地master进行merge之前，master已经有过和远程主机改动同一文件的commit操作，会导致本地origin/master与本地master的merge产生冲突，需要手动修改（怎么修改，修不修改都不重要，重点是要再git commit一次）并【git commit】一遍来解决
+​	三、如果在本地origin/master与本地master进行merge之前，master已经有过和远程主机改动同一文件的commit操作，会导致本地origin/master与本地master的merge产生冲突，需要手动修改（怎么修改，修不修改都不重要，重点是要再git commit一次）并【git commit】一遍来解决
+
+<img src=".//images//image-20230503163248408.png" alt="image-20230503163248408" style="zoom:67%;" /> 
+
+改了2次，文件变更且fetch了1次，这种情况只要本地和远程修改了相同的文件（只要不是修改后的内容还一模一样）就会产生冲突
+
+<img src=".//images//image-20230503163605304.png" alt="image-20230503163605304" style="zoom:67%;" /> 
+
+手动修改冲突之处，再【git commit】就解决冲突并merge 了master和origin/master
+
+<img src=".//images//image-20230503163849093.png" alt="image-20230503163849093" style="zoom:67%;" /> 
+
+此时master origin/master已经在本地同步，远程也要同步的话，需要【git push】将master的内容推向远程仓库
+
