@@ -1,3 +1,4 @@
 远程主机写入了第一行
 趁本地origin/master和master还没合并，远程主机再改一行
 本地master修改同一文件，还没push
+本地master修改了内容还没push，此时远程主机也修改同一行造成pull冲突
