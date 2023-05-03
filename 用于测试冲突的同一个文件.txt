@@ -2,3 +2,6 @@
 test在第二行修改
 test在第三行修改
 master在保留test修改内容的基础上在第四行修改
+master在第五行修改
+
+test在保留master修改的基础上在第七行修改
