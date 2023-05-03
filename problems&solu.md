@@ -80,7 +80,7 @@ git rm "filename.txt" 这个命令执行后是暂存区和工作区同步删除�
 
 只要两个分支都分别提交了若干次，且merge时同一个文件同时被修改，就会产生冲突（除非在两个分支修改后同一个文件内容还是一模一样的）；如果修改的是不同文件，就不会产生冲突。
 
-<img src="C:\Users\zjy\AppData\Roaming\Typora\typora-user-images\image-20230503132958385.png" alt="image-20230503132958385" style="zoom:67%;" />
+<img src=".//images//image-20230503132958385.png" alt="image-20230503132958385" style="zoom:67%;" />
 
 <img src=".//images//image-20230503133012404.png" alt="image-20230503133012404" style="zoom:67%;" />
 
@@ -90,11 +90,11 @@ git rm "filename.txt" 这个命令执行后是暂存区和工作区同步删除�
 
 git merge如果发生上述情况的冲突后，会把冲突文件的冲突之处变成这种形式：
 
-<img src="C:\Users\zjy\AppData\Roaming\Typora\typora-user-images\image-20230503133510497.png" alt="image-20230503133510497" style="zoom:67%;" /> 
+<img src=".//images//image-20230503133510497.png" alt="image-20230503133510497" style="zoom:67%;" /> 
 
 这时候只要修改了文件（甚至你不修改，直接留下这些奇怪的符号也行）并git commit一次，冲突就算解决了并合并成功了，此时合并后的提交树是这样的：
 
-<img src="C:\Users\zjy\AppData\Roaming\Typora\typora-user-images\image-20230503133631815.png" alt="image-20230503133631815" style="zoom:67%;" />
+<img src=".//images//image-20230503133631815.png" alt="image-20230503133631815" style="zoom:67%;" />
 
 至于怎么修改，保留哪部分，完全看你自己，git是不会管的。vscode中给了几种合并冲突的策略供参考，但其实也可以不管他，自己直接随便改。
 
