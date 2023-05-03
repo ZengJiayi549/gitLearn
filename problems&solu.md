@@ -66,15 +66,18 @@ git merge如果发生上述情况的冲突后，git会自动把冲突文件的�
 
 **重点总结**：
 
-git branch -vv用于查看本地和远程关联的分支
+git branch -vv 用于查看本地分支(e.g. master)和本地的远程分支(e.g. origin/master)的关系，注意origin/master的内容不会随着真正远程仓库master的内容改变，需要git fetch才能把这两个内容同步
 
-git branch -a用于查看本地分支和远程分支
+git branch -a用于查看有哪些本地分支和本地远程分支
 
-git remote show origin命令通过连接网络，去获取本地分支与远程分支的关联情况。
+git remote show origin命令通过连接网络，去获取本地分支与真正的远程分支的关联情况
 
-origin/master不一定是git仓库里最新的内容；获取最新的内容到origin/master需要靠git fetch命令。origin/master和master是两个不同的分支，还是按分支合并那一套才能同步内容。git push时一般是推送master的内容到git远程仓库的master分支
+再强调两个地方：
 
-先从远程仓库拉代码到本地，解决冲突+合并后再推送到远程仓库的最标准的流程如下：
+1. 本地的远程分支origin/master和远程仓库中的master分支是两个不同的分支，因此origin/master中的内容不一定是git仓库里最新的内容；获取远程仓库最新的内容到origin/master需要靠git fetch命令。
+2. 本地的远程分支origin/master和本地分支master也是两个不同的分支，还是得按分支合并那一套才能同步两个分支的内容。git push时一般是推送master的内容到git远程仓库的master分支。
+
+先从远程仓库拉代码到本地，解决冲突+合并后，再推送到远程仓库的最标准的流程如下：
 
 - 【git fetch origin master:master】 同步本地的origin/master分支和远程仓库的master分支；相当于origin/master有了一次最新提交
 - 【git checkout master】切换到本地的master分支，【git merge origin/master】将origin/master的最新内容合并到master分支（这时候可能会有merge冲突。修改冲突之处后，再【git commit】一次冲突解决；此时master分支有origin/master中的新内容，也有本地更新的内容）
