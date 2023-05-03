@@ -156,5 +156,7 @@ git checkout master, git merge origin/master后：
 
 <img src=".//images//image-20230503163849093.png" alt="image-20230503163849093" style="zoom:67%;" /> 
 
-此时master origin/master已经在本地同步，远程也要同步的话，需要【git push】将master的内容推向远程仓库
+此时master origin/master已经在本地同步，远程也要同步的话，需要【git push】将master的内容推向远程仓库;这时由于远程主机没有再commit了，所以push是肯定不会有冲突的。至此，整个远程代码与本地代码同步->本地代码推送到远程仓库 加上解决冲突的过程就结束了。
+
+<img src=".//images//image-20230503164446486.png" alt="image-20230503164446486" style="zoom:67%;" /> 
 
